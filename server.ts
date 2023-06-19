@@ -51,6 +51,13 @@ async function main() {
     });
   });
 
+  app.get('/towns/member', async (req, res) => {
+    const collection = db.collection('towns/member');
+    const result = await collection.find().toArray();
+    const response = result[0];
+    res.json(response);
+  });
+
   // NOTE(jayden): mongoDB 통신 예시 코드
   // app.get('/issues', async (req, res) => {
   //   const collection = db.collection('issues');
