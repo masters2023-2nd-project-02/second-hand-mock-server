@@ -5,7 +5,7 @@ const cors = require('cors');
 
 dotenv.config();
 
-const practice = require('./api/practice');
+const root = require('./api/root');
 const products = require('./api/products');
 const towns = require('./api/towns');
 const townsMember = require('./api/towns/member');
@@ -15,7 +15,7 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 
-app.use('/api/practice', practice);
+app.use('/', root);
 app.use('/api/products', products);
 app.use('/api/towns', towns);
 app.use('/api/towns/member', townsMember);
