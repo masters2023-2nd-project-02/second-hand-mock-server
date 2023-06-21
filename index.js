@@ -1,13 +1,13 @@
-import express, { Express } from 'express';
+import express from 'express';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 import cors from 'cors';
-import { DeleteOptions, MongoClient } from 'mongodb';
+import { MongoClient } from 'mongodb';
 
 dotenv.config();
 
 async function main() {
-  const client = new MongoClient(process.env.MONGO_URL as string);
+  const client = new MongoClient(process.env.MONGO_URL);
   await client
     .connect()
     .then(() => {
