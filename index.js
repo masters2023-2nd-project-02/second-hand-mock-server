@@ -4,7 +4,7 @@ const practice = require('./api/practice');
 
 app.use(express.json({ extended: false }));
 
-app.use('/api/practice', practice);
+app.use('/practice', practice);
 
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => console.log(`Server is running in port ${PORT}`));
