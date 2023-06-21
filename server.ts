@@ -1,8 +1,8 @@
-import express from 'express';
+import express, { Express } from 'express';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
 import cors from 'cors';
-import { MongoClient } from 'mongodb';
+import { DeleteOptions, MongoClient } from 'mongodb';
 
 dotenv.config();
 
@@ -57,6 +57,21 @@ async function main() {
     const response = result[0];
     res.json(response);
   });
+
+  app.get('/towns', async (req, res) => {
+    const collection = db.collection('towns');
+    const result = await collection.find().toArray();
+    const response = result[0];
+    res.json(response);
+  });
+
+  // NOTE(jayden): 도시 설정 DELETE 코드(수정 필요)
+  // app.delete('/towns/:townId', async (req, res) => {
+  //   const collection = db.collection('towns/member');
+  //   const townId = Number(req.params.townId);
+  //
+  //   collection.deleteOne({ 'data.town.townId': townId });
+  // });
 
   // NOTE(jayden): mongoDB 통신 예시 코드
   // app.get('/issues', async (req, res) => {
