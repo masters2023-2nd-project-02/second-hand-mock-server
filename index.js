@@ -10,6 +10,7 @@ const products = require('./api/products');
 const towns = require('./api/towns');
 const townsMember = require('./api/towns/member');
 const sales = require('./api/sales');
+const like = require('./api/like');
 
 const app = express();
 
@@ -21,6 +22,7 @@ app.use('/api/products', products);
 app.use('/api/towns', towns);
 app.use('/api/towns/member', townsMember);
 app.use('/api/products/sales', sales);
+app.use('/api/products/like', like);
 
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => console.log(`Server is running in port ${PORT}`));
