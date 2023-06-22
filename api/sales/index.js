@@ -15,7 +15,7 @@ router.get('/', async (req, res) => {
         console.log(err);
       });
     const db = client.db(process.env.DB_NAME);
-    const collection = db.collection('products');
+    const collection = db.collection('sales');
     const result = await collection.find().toArray();
     const response = result[0];
     const pageNum = Number(req.query.pageNum) || 1;

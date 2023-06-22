@@ -20,7 +20,7 @@ app.use('/', root);
 app.use('/api/products', products);
 app.use('/api/towns', towns);
 app.use('/api/towns/member', townsMember);
-app.use('/api/sales', sales);
+app.use('/api/products/sales', sales);
 
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => console.log(`Server is running in port ${PORT}`));
