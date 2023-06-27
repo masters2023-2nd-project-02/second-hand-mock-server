@@ -11,6 +11,7 @@ const towns = require('./api/towns');
 const townsMember = require('./api/towns/member');
 const sales = require('./api/sales');
 const like = require('./api/like');
+const detail = require('./api/detail');
 
 const app = express();
 
@@ -19,6 +20,7 @@ app.use(cors());
 
 app.use('/', root);
 app.use('/api/products', products);
+app.use('/api/products/', detail);
 app.use('/api/towns', towns);
 app.use('/api/towns/member', townsMember);
 app.use('/api/products/sales', sales);
