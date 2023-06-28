@@ -20,11 +20,11 @@ app.use(cors());
 
 app.use('/', root);
 app.use('/api/products', products);
-app.use('/api/products/', detail);
 app.use('/api/towns', towns);
 app.use('/api/towns/member', townsMember);
 app.use('/api/products/sales', sales);
 app.use('/api/products/like', like);
+app.use('/api/products', detail);
 
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => console.log(`Server is running in port ${PORT}`));

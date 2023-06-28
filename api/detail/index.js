@@ -19,7 +19,7 @@ router.get('/:id', async (req, res) => {
     const result = await collection.find().toArray();
     const response = result[0];
     const { id } = req.params;
-    console.log(req.params.id);
+
     res.json({
       status: 200,
       message: `product id: ${id}`,
